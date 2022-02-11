@@ -8,296 +8,43 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Halaman Utama - Notifikasi Banjir Parepare</title>
-
-	<!-- Main Styles -->
+	<title>Halaman Login</title>
 	<link rel="stylesheet" href="assets/styles/style.min.css">
-
-	<!-- mCustomScrollbar -->
-	<link rel="stylesheet" href="assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
 
 	<!-- Waves Effect -->
 	<link rel="stylesheet" href="assets/plugin/waves/waves.min.css">
 
-	<!-- Sweet Alert -->
-	<link rel="stylesheet" href="assets/sweetalert/sweetalert.css">
-	<link rel="stylesheet" href="assets/toastr/toastr.min.css">
-
-	<!-- Percent Circle -->
-	<link rel="stylesheet" href="assets/plugin/percircle/css/percircle.css">
-
-	<!-- Chartist Chart -->
-	<link rel="stylesheet" href="assets/plugin/chart/chartist/chartist.min.css">
-
-	<!-- FullCalendar -->
-	<link rel="stylesheet" href="assets/plugin/fullcalendar/fullcalendar.min.css">
-	<link rel="stylesheet" href="assets/plugin/fullcalendar/fullcalendar.print.css" media='print'>
-
-	<!-- Dark Themes -->
-	<link rel="stylesheet" href="assets/styles/style-dark.min.css">
 </head>
 
 <body>
-	<div class="main-menu">
-		<header class="header">
-			<a href="index.html" class="logo">Parepare</a>
-			<button type="button" class="button-close fa fa-times js__menu_close"></button>
-			<div class="user">
-				<a href="#" class="avatar"><img src="assets/admin.png" alt=""><span class="status online"></span></a>
-				<h5 class="name"><a href="profile.html">Admin</a></h5>
-				<h5 class="position">Administrator</h5>
-				<!-- /.name -->
 
-				<!-- /.control-wrap -->
-			</div>
-			<!-- /.user -->
-		</header>
-		<!-- /.header -->
-
-
-		<div class="content">
-
-			<div class="navigation">
-				<h5 class="title">Navigasi</h5>
+	<div id="single-wrapper">
+		<form action="#" class="frm-single">
+			<div class="inside">
+				<div class="title"><strong>Notifikasi Banjir </strong>Parepare</div>
 				<!-- /.title -->
-				<ul class="menu js__accordion">
-					<li class="current">
-						<a class="waves-effect" href="index.html"><i class="menu-icon fa fa-home"></i><span>Halaman Utama</span></a>
-					</li>
-
-					<li>
-						<a class="waves-effect" href="widgets.html"><i class="menu-icon fa fa-code"></i><span>Log History</span>
-							<!-- <span class="notice notice-yellow">6</span> -->
-						</a>
-					</li>
-
-					<li>
-						<a class="waves-effect" href="widgets.html"><i class="menu-icon fa fa-sign-out"></i><span>Logout</span>
-							<!-- <span class="notice notice-yellow">6</span> -->
-						</a>
-					</li>
-				</ul>
-
+				<div class="frm-title">Login</div>
+				<!-- /.frm-title -->
+				<div class="frm-input"><input type="text" placeholder="Username" id="username" class="frm-inp"><i
+						class="fa fa-user frm-ico"></i></div>
+				<!-- /.frm-input -->
+				<div class="frm-input"><input type="password" placeholder="Password" id="password" class="frm-inp"><i
+						class="fa fa-lock frm-ico"></i></div>
+				<!-- /.frm-input -->
+			
+				<button type="button" class="frm-submit" onclick="login()">Login<i class="fa fa-arrow-circle-right"></i></button>
+				
+				<!-- /.row -->
+				<!-- <a href="page-register.html" class="a-link"><i class="fa fa-key"></i>New to NinjaAdmin? Register.</a> -->
+				<div class="frm-footer">Notifikasi Banjir Parepare © 2022.</div>
+				<!-- /.footer -->
 			</div>
-			<!-- /.navigation -->
-		</div>
-		<!-- /.content -->
+			<!-- .inside -->
+		</form>
+		<!-- /.frm-single -->
 	</div>
-	<!-- /.main-menu -->
+	<!--/#single-wrapper -->
 
-	<div class="fixed-navbar">
-		<div class="pull-left">
-			<button type="button" class="menu-mobile-button glyphicon glyphicon-menu-hamburger js__menu_mobile"></button>
-			<h1 class="page-title">Halaman Utama</h1>
-			<!-- /.page-title -->
-		</div>
-		<!-- /.pull-left -->
-
-		<!-- /.pull-right -->
-	</div>
-	<!-- /.fixed-navbar -->
-
-
-
-
-	<div id="wrapper">
-		<div class="main-content">
-			<div class="row small-spacing">
-				<div class="col-xs-12">
-					<div class="box-content">
-						<h4 class="box-title">Peta Parepare</h4>
-						<!-- /.box-title -->
-
-						<!-- /.dropdown js__dropdown -->
-						<div class="card-content">
-							<div class="form-group">
-								<div id="map" style="width: 100%; height: 500px"></div>
-							</div>
-							<div class="form-group text-center">
-								<!-- create button -->
-								<button type="button" class="btn btn-xs btn-primary" onclick="open_modal_tambah_banjir()">
-									Tambah Area Banjir
-								</button>
-							</div>
-						</div>
-
-
-					</div>
-					<!-- /.box-content -->
-				</div>
-				<!-- /.col-xs-12 -->
-
-
-
-				<div class="col-lg-12 col-xs-12">
-					<div class="box-content">
-						<h4 class="box-title">Statistics</h4>
-						<!-- /.box-title -->
-						<div class="dropdown js__drop_down">
-							<a href="#" class="dropdown-icon glyphicon glyphicon-option-vertical js__drop_down_button"></a>
-							<ul class="sub-menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else there</a></li>
-								<li class="split"></li>
-								<li><a href="#">Separated link</a></li>
-							</ul>
-							<!-- /.sub-menu -->
-						</div>
-						<!-- /.dropdown js__dropdown -->
-						<div class="content">
-							<div id="chart-2" class="js__chart" data-type="column"
-								data-chart="'Year'/'Statistics' | '2010'/75 | '2011'/42 | '2012'/75 | '2013'/38 | '2014'/19 | '2015'/93 ">
-							</div>
-						</div>
-						<!-- /.content -->
-					</div>
-					<!-- /.box-content -->
-				</div>
-				<!-- /.col-lg-12 col-md-12 -->
-
-				<!-- modal -->
-
-
-			</div>
-			<!-- /.row -->
-			<footer class="footer">
-				<ul class="list-inline">
-					<li>2022 © Notifikasi Banjir Parepare.</li>
-					<li><a href="#">Privacy</a></li>
-					<li><a href="#">Terms</a></li>
-					<li><a href="#">Help</a></li>
-				</ul>
-			</footer>
-		</div>
-		<!-- /.main-content -->
-	</div>
-
-
-	<div class="modal fade" id="modal_tambah_banjir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1">
-		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-							aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel-1">Form Tambah Area banjir</h4>
-				</div>
-				<div class="modal-body">
-
-					<div id="div_map2" style="display: none;">
-						<div id="div_map22"></div>
-						<p id="p_kelurahan" style="font-size: 10px;"><i>Klik kanan pada mouse untuk menambah marker</i></p>
-
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<div class="card-content">
-								<div class="form-group">
-									<label for="exampleInputEmail1">Kecamatan</label>
-									<select name="select_kecamatan" id="select_kecamatan" class="form-control"
-										onchange="onchange_kecamatan(value)">
-										<option value="0" selected disabled>-Pilih Kecamatan</option>
-										<option value="Bacukiki">Bacukiki</option>
-										<option value="Bacukiki Barat">Bacukiki Barat</option>
-										<option value="Soreang">Soreang</option>
-										<option value="Ujung">Ujung</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1">Kelurahan</label>
-									<select name="select_kelurahan" id="select_kelurahan" class="form-control"
-										onchange="onchange_kelurahan(value)">
-										<option value="0" selected disabled>-Pilih Kecamatan Dahulu</option>
-									</select>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1"> Ketinggian Minimal Banjir</label>
-									<div class="form-group">
-										<input type="text" class="form-control numbersOnly" id="minimal_tinggi" placeholder="Ketinggian Minimal Banjir" maxlength="2">
-										<p style="font-size: 10px;"><i>(Dalam Ukuran Meter)</i></p>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1"> Ketinggian Maksimal Banjir</label>
-									<div class="form-group">
-										<input type="text" class="form-control numbersOnly" id="maksimal_tinggi" placeholder="Ketinggian Maksimal Banjir" maxlength="2">
-										<p style="font-size: 10px;"><i>(Dalam Ukuran Meter)</i></p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-xs waves-effect waves-light"
-						data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary btn-xs waves-effect waves-light" onclick="tambah_area_banjir()">Tambah Area Banjir</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="modal_edit_banjir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel-1">
-		<div class="modal-dialog modal-lg" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-							aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel-1">Form Edit Detail banjir</h4>
-				</div>
-				<div class="modal-body">
-
-					<div id="div_map3">
-						
-					</div>
-					<br>
-					<div class="row">
-						<div class="col-md-2"></div>
-						<div class="col-md-8">
-							<div class="card-content">
-								<div class="form-group">
-									<label for="exampleInputEmail1"> Waktu Ditambah</label>
-									<div class="form-group">
-										<input type="text" class="form-control" id="waktu_ditambah_edit" disabled>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1"> Waktu Update Terbaru</label>
-									<div class="form-group">
-										<input type="text" class="form-control" id="waktu_update_edit" disabled>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1"> Ketinggian Minimal Banjir</label>
-									<div class="form-group">
-										<input type="text" class="form-control numbersOnly" id="minimal_tinggi_edit" placeholder="Ketinggian Minimal Banjir" maxlength="2">
-										<p style="font-size: 10px;"><i>(Dalam Ukuran Meter)</i></p>
-									</div>
-								</div>
-								<div class="form-group">
-									<label for="exampleInputEmail1"> Ketinggian Maksimal Banjir</label>
-									<div class="form-group">
-										<input type="text" class="form-control numbersOnly" id="maksimal_tinggi_edit" placeholder="Ketinggian Maksimal Banjir" maxlength="2">
-										<p style="font-size: 10px;"><i>(Dalam Ukuran Meter)</i></p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-2"></div>
-					</div>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default btn-xs waves-effect waves-light"
-						data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary btn-xs waves-effect waves-light" id="button_confirm_edit" onclick="konfirm_edit()">Edit Detail Banjir</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!--/#wrapper -->
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 		<script src="assets/script/html5shiv.min.js"></script>
@@ -309,52 +56,13 @@
 	<script src="assets/scripts/jquery.min.js"></script>
 	<script src="assets/scripts/modernizr.min.js"></script>
 	<script src="assets/plugin/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 	<script src="assets/plugin/nprogress/nprogress.js"></script>
-	<script src="assets/sweetalert/sweetalert.js"></script>
-	<script src="assets/toastr/toastr.min.js"></script>
-	<script src="assets/block/jquery.blockUI.js"></script>
 	<script src="assets/plugin/waves/waves.min.js"></script>
-	<!-- Full Screen Plugin -->
-	<script src="assets/plugin/fullscreen/jquery.fullscreen-min.js"></script>
-
-	<!-- Percent Circle -->
-	<script src="assets/plugin/percircle/js/percircle.js"></script>
-
-	<!-- Google Chart -->
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-	<!-- Chartist Chart -->
-	<script src="assets/plugin/chart/chartist/chartist.min.js"></script>
-	<script src="assets/scripts/chart.chartist.init.min.js"></script>
-
-	<!-- FullCalendar -->
-	<script src="assets/plugin/moment/moment.js"></script>
-	<script src="assets/plugin/fullcalendar/fullcalendar.min.js"></script>
-	<script src="assets/scripts/fullcalendar.init.js"></script>
-
-	<!-- Google Map -->
-	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6bnAk0C2jIDDbz_dVRso9gUEnHLTH68"
-		type="text/javascript"></script>
-	<script src="assets/scripts/map.demo.js"></script> -->
 
 	<script src="assets/scripts/main.min.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7B9RynI4hQM_Y4BG9GYxsTLWwYkGASRo&libraries=geometry,drawing">
-		</script>
-	<script src="js/main2.js"></script>
-	<script src="js/main.js"></script>
-	<script>
-
-
-
-
-
-	</script>
-
-	<!-- <script async
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7B9RynI4hQM_Y4BG9GYxsTLWwYkGASRo&callback=initMap&libraries=geometry&sensor=true">
-		</script> -->
+	<script src="assets/toastr/toastr.min.js"></script>
+	<script src="assets/block/jquery.blockUI.js"></script>
+	<script src="js/index.js"></script>
 </body>
 
 </html>
