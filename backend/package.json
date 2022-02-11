@@ -1,0 +1,22 @@
+{
+  "name": "flood_app_backend",
+  "version": "1.0.0",
+  "description": "Flood App Backend",
+  "main": "app.js",
+  "scripts": {
+    "run" : "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kicap Karan",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.2",
+    "express-form-data": "^2.0.17",
+    "mongoose": "^6.2.0",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.1",
+    "socket.io-client": "^4.4.1"
+  }
+}
